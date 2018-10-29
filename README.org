@@ -1,0 +1,5 @@
+* CEIDEC Pong on the Web!
+
+CEIDEC-Pong Web is a Pong-like game programmed in Javascript with the [[https://phaser.io/][Phaser.io]] framework. It was developed for a game programming course to be taught during the [[https://twitter.com/Noticienciasucv/status/1056776035214258176/][CEIDEC 2018]] week at the [[http://www.ucv.ve/][Universidad Central de Venezuela]].
+
+CEIDEC-Pong is [[https://people.freebsd.org/~phk/][Beerware]]. Check the LICENSE file for more details.
