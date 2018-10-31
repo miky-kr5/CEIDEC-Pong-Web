@@ -10,7 +10,7 @@ function canIPlayTheGame() {
 	if (result.logs[0].args.player === myAccount) {
 	    $('#can_play').text(myAccount + ' can play the game!');
 	    getTimesPlayed();
-	    loadBalance();
+	    loadBalance(false);
 	    playTheGame();
 	} else {
 	    alert("Whoops! An error ocurred.\nThanks for your money, though :P");
@@ -20,13 +20,15 @@ function canIPlayTheGame() {
     });
 }
 
-function loadBalance() {
+function loadBalance(sad) {
     myWeb3.eth.getCoinbase(function(err, account) {
 	if (err === null) {
 	    myAccount = account;
 	    myWeb3.eth.getBalance(account, function(err, balance) {
 		if (err === null) {
 		    $('#balance').text(myWeb3.fromWei(balance, "ether") + " ETH");
+		    if (sad)
+			$('#can_play').text(myAccount + " can't play the game... so sad!");
 		}
 	    });
 	}
@@ -63,9 +65,8 @@ function initWeb3() {
 	pong.setProvider(myWeb3Provider);
 
 	// update UI
-	loadBalance();
+	loadBalance(true);
 	getTimesPlayed();
-	$('#can_play').text(myAccount + " can't play the game... so sad!");
 
 	// Register call and listen for events.
 	ethCallback = canIPlayTheGame;
