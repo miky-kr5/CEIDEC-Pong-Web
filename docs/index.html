@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CEIDEC-Pong on the Web!</title>
+    <style>
+      * {
+        padding: 0; margin: 0;
+      }
+      .main_table {
+        background: rgba(255, 255, 255, 0.45);
+        padding:10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/eth.js"></script>
+  </head>
+  <body>
+    <table class="main_table">
+      <tr>
+	<td>
+	  <p>Your ETH balance: <span id="balance">NOT LOADED</span></p>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <div id="game_container"></div>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <p id="times_played"></p>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <p id="can_play"></p>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

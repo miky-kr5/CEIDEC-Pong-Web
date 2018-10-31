@@ -27,6 +27,8 @@ var textStyle = {
     fill: "#FFFFFF",
 }
 
+var ethCallback = null;
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions.                                                                  //
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +39,14 @@ function randSig() {
 }
 
 function startGame() {
+    if (ethCallback !== null) {
+	canIPlayTheGame()
+    } else {
+	alert("Can't play the game\nWeb3 not initialized.");
+    }
+}
+
+function playTheGame() {
     startButton.destroy();
     ball.body.velocity.set(randSig() * 150, randSig() * 150);
     playing = true;
@@ -106,8 +116,8 @@ function ballLeaveScreen() {
 function preload() {
     // Set basic game properties
     //game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    game.scale.pageAlignHorizontally = true;
-    game.scale.pageAlignVertically = true;
+    //game.scale.pageAlignHorizontally = true;
+    //game.scale.pageAlignVertically = true;
     game.stage.backgroundColor = "#eee";
 
     // Set basic game properties

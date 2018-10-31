@@ -1,0 +1,25 @@
+{
+  "name": "ceidec-pong-web",
+  "version": "0.0.1",
+  "description": "Pong in the Blockchain!",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CEIDEC",
+    "pong",
+    "ethereum"
+  ],
+  "author": "Miguel Angel Astor Romero",
+  "license": "Beerware",
+  "dependencies": {
+    "lite-server": "^2.4.0",
+    "truffle-contract": "^3.0.6",
+    "web3": "^1.0.0-beta.36"
+  }
+}
