@@ -40,7 +40,7 @@ function randSig() {
 
 function startGame() {
     if (ethCallback !== null) {
-	canIPlayTheGame()
+	ethCallback();
     } else {
 	alert("Can't play the game\nWeb3 not initialized.");
     }

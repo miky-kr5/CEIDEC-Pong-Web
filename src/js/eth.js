@@ -10,6 +10,7 @@ function canIPlayTheGame() {
 	if (result.logs[0].args.player === myAccount) {
 	    $('#can_play').text(myAccount + ' can play the game!');
 	    getTimesPlayed();
+	    loadBalance();
 	    playTheGame();
 	} else {
 	    alert("Whoops! An error ocurred.\nThanks for your money, though :P");
@@ -26,7 +27,6 @@ function loadBalance() {
 	    myWeb3.eth.getBalance(account, function(err, balance) {
 		if (err === null) {
 		    $('#balance').text(myWeb3.fromWei(balance, "ether") + " ETH");
-		    $('#can_play').text(myAccount + " can't play the game... so sad!");
 		}
 	    });
 	}
@@ -65,6 +65,7 @@ function initWeb3() {
 	// update UI
 	loadBalance();
 	getTimesPlayed();
+	$('#can_play').text(myAccount + " can't play the game... so sad!");
 
 	// Register call and listen for events.
 	ethCallback = canIPlayTheGame;
